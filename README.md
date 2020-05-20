@@ -51,9 +51,9 @@ Contiene 4 operaciones con las que se puede operar sobre la orden:
 - `/ordenes` [POST] [OrdenesPST]: Crea la orden de acuerdo con los parámetros recibidos. La orden debe tener transporte, eventos y hospedajes. Se crea tambien como estado "Cotizacion". La orden va a atada a un producto. *(No implementado)*
 - `/ordenes` [PATCH] [OrdenesPCT]: Actualizar la orden de acuerdo con los parámetros recibidos. La orden se actualiza solamente el estado.  *(No implementado)*
 - `/ordenes/{idOrden}` [DELETE] [OrdenesDEL]: Cancela la orden. *(No implementado)*
-- `/ordenes/facturas` [POST] [FacturasPST]: Pagar la orden. *(No implementado)*
-- `/ordenes/facturas` [GET] [FacturasGETAll]: Consultar todas las facturas. *(No implementado)*
-- `/ordenes/facturas/orden/{idOrden}/factura/{idFactura}` [GET] [FacturasGETById]: Consultar factura por id de la orden y id de la factura. *(No implementado)*
+- `/ordenes/{codigoOrden}/factura` [POST] [facturaPST]: Crea la factura de una orden ya existente con los detalles del pago realizado.
+- `/ordenes/{codigoOrden}/factura` [GET] [ordenesGETFacturaPorOrden]: Obtiene el detalle de la factura de una orden, con la información de impresión.
+- `/ordenes/facturas/orden/{codigoOrden}/{codigoFactura}` [PATCH] [ordenFacturaPCT]: Actualiza losa datos de una factura, en caso de requerir modificaciones de los valores calculados de la facturación.
 
 ### Clientes
 
